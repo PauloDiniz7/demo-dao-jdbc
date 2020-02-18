@@ -21,9 +21,10 @@ public class Program1 {
 		System.out.println("-------------------------");
 		System.out.println(seller);	  */
 
-		//obter o vendedor de codigo (id) igual a 3
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
+		//obter o vendedor de codigo (id) igual a 3
+		System.out.println("=== TEST 1: seller findById =====");
 		Seller seller = sellerDao.findById(3);
 		
 		System.out.println(seller);
