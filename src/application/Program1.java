@@ -1,6 +1,7 @@
 package application;
 
 import java.util.List;
+import java.util.Scanner;
 import java.util.Date;
 
 import model.dao.DaoFactory;
@@ -10,6 +11,8 @@ import model.entities.Seller;
 
 public class Program1 {
 	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
 		
 	// criando um departamento (1, Books) e um vendedor (id = 21, Bob,...)	
 	/*	Department obj = new Department (1, "Books");
@@ -43,11 +46,13 @@ public class Program1 {
 		for (Seller obj : list) {
 			System.out.println(obj);
 		}
-	/*	//fazer uma inserção na tabela Seller. Obs.: comentado p/ não gerar duplicidade...
+		
+		/*
+		//fazer uma inserção na tabela Seller. Obs.: comentado p/ não gerar duplicidade...
 		System.out.println("\n=== TEST 4: seller insert ====="); 
 		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, department); 
 		sellerDao.insert(newSeller); 
-		System.out.println("Inserted! New id = " + newSeller.getId()); 		*/ 	 
+		System.out.println("Inserted! New id = " + newSeller.getId()); 		 */	 
 
 		//fazer uma alteração no nome do vendedor na tabela Seller no registro id = 1
 		System.out.println("\n=== TEST 5: seller UPDATE ====="); 
@@ -55,6 +60,15 @@ public class Program1 {
 		seller.setName("Paulo Diniz");
 		sellerDao.update(seller); 
 		System.out.println("Update completed!"); 		 	 
+		
+		//fazer uma exclusão de um vendedor na tabela Seller ( registro informado = id 10)
+		System.out.println("\n=== TEST 6: seller delete ====="); 
+		System.out.println("Enter id for delete test: "); 
+		int id = sc.nextInt(); 
+ 		sellerDao.deleteById(id); 
+ 		System.out.println("Delete completed");   
+		 		 
+		sc.close(); 
 
 	}
 }
