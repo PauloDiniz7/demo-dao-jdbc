@@ -43,11 +43,18 @@ public class Program1 {
 		for (Seller obj : list) {
 			System.out.println(obj);
 		}
-		//fazer uma inserção na tabela Seller
+	/*	//fazer uma inserção na tabela Seller. Obs.: comentado p/ não gerar duplicidade...
 		System.out.println("\n=== TEST 4: seller insert ====="); 
 		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, department); 
 		sellerDao.insert(newSeller); 
-		System.out.println("Inserted! New id = " + newSeller.getId()); 		 	 
+		System.out.println("Inserted! New id = " + newSeller.getId()); 		*/ 	 
+
+		//fazer uma alteração no nome do vendedor na tabela Seller no registro id = 1
+		System.out.println("\n=== TEST 5: seller UPDATE ====="); 
+		seller = sellerDao.findById(1);
+		seller.setName("Paulo Diniz");
+		sellerDao.update(seller); 
+		System.out.println("Update completed!"); 		 	 
 
 	}
 }
