@@ -38,5 +38,12 @@ public class Program1 {
 		for (Seller obj : list) {
 			System.out.println(obj);
 		}
+		//obter a relação de todos os vendedores classificados por nome
+		System.out.println("\n=== TEST 3: seller findAll =====");
+		list = sellerDao.findAll();
+		for (Seller obj : list) {
+			System.out.println(obj);
+		}
+
 	}
 }
